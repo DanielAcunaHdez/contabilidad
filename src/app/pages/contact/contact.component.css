@@ -1,0 +1,39 @@
+/* Add styles to the form container */
+.containerContact {
+    margin: 20px;
+    max-width: 450px;
+    width: 450px;
+    padding: 16px;
+    background-color: white;
+  }
+  
+  
+  /*CONTACTO*/
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    
+  }
+  
+  .example-full-width {
+    width: 100%;
+    
+  }
+
+  .example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+  
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+:host ::ng-deep .mat-form-field-flex {
+    color:black;
+  }
+

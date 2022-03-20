@@ -1,0 +1,33 @@
+<mat-accordion>
+
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false"  data-aos="fade-right" >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Costo de las asesorias
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Las asesorias tienen un costo aproximado de $1,500 pesos, la sesión dura aproximadamente 1 hora 30 minutos</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"  data-aos="fade-left" data-aos-delay="300">
+  <mat-expansion-panel-header>
+  <mat-panel-title>
+    Tienen citas online
+  </mat-panel-title>
+  </mat-expansion-panel-header>
+  <p>Si, actualmente brindamos asesoría online y presencial.</p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"  data-aos="fade-right" data-aos-delay="500">
+  <mat-expansion-panel-header>
+  <mat-panel-title>
+    Brindan asesoría a PYMEs
+  </mat-panel-title>
+  </mat-expansion-panel-header>
+  <p>Así es, nuestros servicios se adaptan para cualquier tipo de empresa.</p>
+  </mat-expansion-panel>
+
+</mat-accordion>

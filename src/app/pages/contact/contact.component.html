@@ -1,0 +1,124 @@
+<div class="container col-xl-10 coimportl-xxl-8 px-4 py-0 bg-light">
+    <div class="row align-items-center">
+
+      
+        <div class="col-lg-4 align-self-center">
+          <div class="row">
+
+            <i class="bi bi-geo-alt-fill"> <a>   Cantú 9 Col. Anzures, Miguel Hidalgo, Ciudad de México, 11590</a></i> <br><br><br>
+            <i class="bi bi-telephone-fill"> <a href="tel:7716842690">   771-698-2690</a></i><br><br><br>
+            <i class="bi bi-envelope-fill"> <a href="mailto:danvir78@hotmail.com" target="_blank">danvir78@hotmail.com</a></i><br><br>
+
+            <div class="col-lg-12" data-aos="fade-down">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59955.70813878262!2d-98.7917973629315!3d20.082596561945916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1a7716f1e038b%3A0x13315c101496b749!2sPachuca%20de%20Soto%2C%20Hgo.!5e0!3m2!1ses!2smx!4v1646448792196!5m2!1ses!2smx" width="280" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="p-2  border rounded-3 col-lg-8 bg-contact row row-cols-1 row-cols-md-1 " data-aos="fade-up" data-aos-easing="ease-in-sine">
+        <div class="">
+
+            <!-- <h1 class="display-5 fw-bold ">Contacto</h1> -->
+
+            <div class="row row-cols-1 row-cols-md-2  text-center bg-light rounded" >
+
+              <div data-aos="fade-up"data-aos-delay="90" class="col py-3">
+                <mat-form-field class="example-form" appearance="outline"  >
+                  <mat-label>Nombre</mat-label>
+                  <input matInput required type="text" [(ngModel)]="nombre" autocomplete="off" [disabled]="canInput" >
+                  <button mat-button *ngIf="nombre" matSuffix mat-icon-button aria-label="Clear" (click)="nombre=''" style=" border: none;" [disabled]="canInput">
+                  <mat-icon>close</mat-icon>
+                  </button>
+                  <mat-error *ngIf="nombreFormControl.hasError('required')">
+                      Nombre <strong>requerido</strong>
+                  </mat-error>
+              </mat-form-field>
+              <mat-divider [vertical]="true"></mat-divider>
+             </div>
+
+             <div data-aos="fade-up"data-aos-delay="90" class="col py-3">
+
+              <mat-form-field class="example-form" appearance="outline" >
+                <mat-label>Email</mat-label>
+                <input type="email" required [(ngModel)]="correo" matInput [formControl]="emailFormControl"  placeholder="Ex. pat@example.com" autocomplete="off" [disabled] = "true">
+                <button mat-button *ngIf="correo" matSuffix mat-icon-button aria-label="Clear" (click)="correo=''" style="background-color: transparent; border: none;" [disabled]="canInput">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                Por favor ingresa una dirección de correo electrónico válida
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email  <strong>requerido</strong>
+                </mat-error>
+              </mat-form-field>
+              <mat-divider [vertical]="true"></mat-divider>
+
+           </div>
+
+           
+           <div data-aos="fade-up"data-aos-delay="90" class="col py-3">
+               
+            <mat-form-field class="example-form" appearance="outline" >
+              <mat-label>Teléfono</mat-label>
+              <input matInput required #telefono type="number"   oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" [(ngModel)]="tel" placeholder="Ex. 94105" value="" autocomplete="off" [disabled]="canInput">
+              <button mat-button *ngIf="tel" matSuffix mat-icon-button aria-label="Clear" (click)="tel=''" style="background-color: transparent; border: none;" [disabled]="canInput">
+                  <mat-icon>close</mat-icon>
+              </button>
+              <mat-hint align="end">{{telefono.value.length}} / 10</mat-hint>
+              <mat-error *ngIf="telefonoFormControl.hasError('required')">
+                  Teléfono <strong>requerido</strong>
+              </mat-error>
+              <mat-error *ngIf="telefonoFormControl.hasError('maxLength') && !telefonoFormControl.hasError('required')">
+                  Maximooo
+              </mat-error>
+              
+          </mat-form-field>
+          <mat-divider [vertical]="true"></mat-divider>
+
+            </div>
+
+            <div data-aos="fade-up"data-aos-delay="90" class="col py-3">
+           
+              <mat-form-field class="example-form" appearance="outline"  >
+                <mat-label>Empresa</mat-label>
+                <input matInput required type="text" [(ngModel)]="empresa" autocomplete="off" [disabled]="canInput" >
+                <button mat-button *ngIf="empresa" matSuffix mat-icon-button aria-label="Clear" (click)="empresa=''" style=" border: none;" [disabled]="canInput">
+                <mat-icon>close</mat-icon>
+                </button>
+                <mat-error *ngIf="empresaFormControl.hasError('required')">
+                    Nombre de empresa <strong>requerida</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-divider [vertical]="true"></mat-divider>
+              </div>            
+             
+           </div>
+
+           
+
+
+           <mat-form-field class="example-form" appearance="outline" >
+            <mat-label>Mensaje</mat-label>
+            <textarea matInput  [(ngModel)]="mensaje" required #message maxlength="256" placeholder="Ex. I need help with..." [disabled]="canInput"></textarea>
+
+      
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+            <mat-error *ngIf="mensajeFormControl.hasError('required')">
+                Mensaje <strong>requerido</strong>
+            </mat-error>
+        </mat-form-field> 
+
+
+
+
+          <div class="text-center" style="    margin-top: 15px;">
+            <button class="btn btn-primary" (click)="sendMail()" [disabled]="canInput" style="width: 100%;">Enviar</button>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
